@@ -4,6 +4,8 @@ pipeline {
     stage('Compile') {
       steps {
         echo 'Stage: Compile'
+        echo 'WORKSPACE: ${env.WORKSPACE}'
+        echo 'PATH: ${env.PATH}'
         tool(type: 'jdk', name: 'Java8u172')
         tool(type: 'maven', name: 'Maven3.5.4')
       }
