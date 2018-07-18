@@ -1,11 +1,21 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Compile') {
       steps {
+        echo 'Stage: Compile'
         tool(type: 'jdk', name: 'Java8u172')
         tool(type: 'maven', name: 'Maven3.5.4')
-        sh 'mvn clean verify'
+      }
+    }
+    stage('Test') {
+      steps {
+        echo 'Stage: Test'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'Stage: Deploy'
       }
     }
   }
