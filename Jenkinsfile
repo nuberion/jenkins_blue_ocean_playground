@@ -4,8 +4,7 @@ pipeline {
     stage('Compile') {
       steps {
         echo 'Stage: Compile'
-        echo 'WORKSPACE: $WORKSPACE'
-        echo 'PATH: $PATH'
+        sh 'printenv'
         tool(type: 'jdk', name: 'Java8u172')
         tool(type: 'maven', name: 'Maven3.5.4')
       }
