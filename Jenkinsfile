@@ -7,6 +7,7 @@ pipeline {
         sh 'printenv'
         tool(type: 'jdk', name: 'Java8u172')
         tool(type: 'maven', name: 'Maven3.5.4')
+        sh 'printenv'
       }
     }
     stage('Test') {
